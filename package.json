@@ -1,0 +1,23 @@
+{
+  "name": "gpu-availability",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:web",
+    "build:web": "next build ./web",
+    "dev:api": "node --watch ./server/index.mjs",
+    "dev:web": "next dev ./web",
+    "generate:data": "node ./scripts/generate-data.mjs",
+    "start:api": "node ./server/index.mjs",
+    "start:web": "next start ./web",
+    "test": "node --test --experimental-test-coverage --test-coverage-include='./src/*.js' --test-coverage-lines=100 --test-coverage-functions=100 --test-coverage-branches=100 ./tests/*.test.js",
+    "test:coverage": "npm test",
+    "verify": "npm run generate:data && npm test && npm run build:web"
+  },
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}

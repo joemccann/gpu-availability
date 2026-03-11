@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      target: api
+    environment:
+      PORT: 3001
+      SNAPSHOT_CACHE_TTL_MS: 60000
+      SNAPSHOT_POLL_INTERVAL_MS: 900000
+    ports:
+      - "3001:3001"
+
+  web:
+    build:
+      context: .
+      target: web
+    depends_on:
+      - api
+    environment:
+      API_BASE_URL: http://api:3001
+    ports:
+      - "3000:3000"
