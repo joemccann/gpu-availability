@@ -26,8 +26,8 @@ Execute the full next-step backlog for this repo: add history persistence and ti
 - [x] `T4` Add a same-origin frontend proxy path and update the Next.js app to render current and historical data from the API. `depends_on: [T2]`
 - [x] `T5` Update repo scripts, docs, and ignore rules for the final architecture. `depends_on: [T2, T3, T4]`
 - [x] `T6` Run full verification, plus runtime smoke tests for the API and frontend behavior. `depends_on: [T5]`
-- [ ] `T7` Create descriptive git commits for the completed work. `depends_on: [T6]`
-- [ ] `T8` Create or publish the GitHub repository publicly and push the current branch. `depends_on: [T7]`
+- [x] `T7` Create descriptive git commits for the completed work. `depends_on: [T6]`
+- [x] `T8` Create or publish the GitHub repository publicly and push the current branch. `depends_on: [T7]`
 
 ## Review
 - Added persistent snapshot history in `src/history.js` and wired `src/api.js` plus `server/index.mjs` to serve `GET /api/history`, cache current snapshots, and record scheduled snapshots to disk.
@@ -43,3 +43,5 @@ Execute the full next-step backlog for this repo: add history persistence and ti
   Web `http://127.0.0.1:4020/api/history?limit=24` returned `200` with `count=2`.
   Web `http://127.0.0.1:4020/` returned `200` and included the dashboard shell text.
 - `docker compose config` passed on March 11, 2026.
+- Created git commit `4973c8b` with the full API, history, proxy, CI, deployment, and docs baseline.
+- Published `https://github.com/joemccann/gpu-availability` on March 11, 2026 and confirmed `visibility=PUBLIC` with `gh repo view`.
